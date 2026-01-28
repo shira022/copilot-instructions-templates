@@ -14,15 +14,18 @@ A curated collection of custom instruction templates for GitHub Copilot (`.githu
 - [TypeScript](templates/languages/typescript.md)
 - [Python](templates/languages/python.md)
 - [Go](templates/languages/go.md)
+- [Rust](templates/languages/rust.md)
 
 ### Frameworks
 - [Next.js](templates/frameworks/nextjs.md)
 - [FastAPI](templates/frameworks/fastapi.md)
 - [React + Tailwind](templates/frameworks/react-tailwind.md)
+- [NestJS](templates/frameworks/nestjs.md)
 
 ### Roles
 - [Security Expert](templates/roles/security-expert.md)
 - [Refactoring Specialist](templates/roles/refactoring-specialist.md)
+- [Test Engineer](templates/roles/test-engineer.md)
 
 ## 📖 Documentation
 
