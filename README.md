@@ -4,6 +4,26 @@ A curated collection of custom instruction templates for GitHub Copilot (`.githu
 
 ## 🚀 Quick Start
 
+### Option 1: Using CLI Tool (Recommended)
+
+```bash
+# Install globally
+npm install -g @github-copilot/instruction-templates
+
+# Navigate to your project
+cd your-project
+
+# Initialize with interactive template selection
+copilot-instructions-templates init
+
+# Or use npx without installing
+npx @github-copilot/instruction-templates init
+```
+
+See [CLI Usage Guide](docs/cli-usage.md) for detailed documentation.
+
+### Option 2: Manual Setup
+
 1. Browse the [templates directory](templates/) to find instructions that match your tech stack
 2. Copy the relevant `.md` file(s) to your project's `.github/` directory as `copilot-instructions.md`
 3. Customize the instructions to fit your specific project needs
@@ -98,9 +118,43 @@ A curated collection of custom instruction templates for GitHub Copilot (`.githu
 
 ## 📖 Documentation
 
+- [CLI Usage Guide](docs/cli-usage.md) - How to use the command-line tool
 - [Contributing Guide](CONTRIBUTING.md) - How to add new templates
 - [Template Structure](docs/template-structure.md) - Standard template format
 - [Best Practices](docs/best-practices.md) - Writing effective Copilot instructions
+- [Metadata Schema](docs/metadata-schema.md) - YAML frontmatter specification
+
+## 🛠️ Development
+
+### For Contributors
+
+```bash
+# Clone the repository
+git clone https://github.com/shira022/copilot-instructions-templates.git
+cd copilot-instructions-templates
+
+# Install dependencies
+npm install
+
+# Build TypeScript
+npm run build
+
+# Run validation scripts
+npm run validate
+
+# Run tests
+npm test
+```
+
+### CI/CD
+
+This repository uses GitHub Actions for:
+- **Template validation**: Checks all templates have required sections
+- **YAML validation**: Validates frontmatter metadata
+- **Link checking**: Detects broken links in documentation
+- **Markdown linting**: Ensures consistent markdown formatting
+
+See [.github/workflows/](.github/workflows/) for workflow configurations.
 
 ## 🤝 Contributing
 

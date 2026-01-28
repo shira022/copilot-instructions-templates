@@ -1,0 +1,40 @@
+name: Validate Templates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    paths:
+      - 'templates/**/*.md'
+      - 'examples/**/*.md'
+      - 'docs/**/*.md'
+
+jobs:
+  validate:
+    name: Validate Template Structure
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          else
+            echo "No package.json found, skipping npm install"
+          fi
+        
+      - name: Check for required sections
+        run: node scripts/check-sections.js
+        
+      - name: Validate YAML frontmatter
+        run: node scripts/validate-yaml.js
+        continue-on-error: true  # Allow templates without frontmatter for now

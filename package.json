@@ -1,0 +1,68 @@
+{
+  "name": "@github-copilot/instruction-templates",
+  "version": "1.0.0",
+  "description": "CLI tool and templates for managing GitHub Copilot instructions",
+  "keywords": [
+    "github-copilot",
+    "templates",
+    "cli",
+    "copilot-instructions",
+    "ai-pair-programming"
+  ],
+  "homepage": "https://github.com/shira022/copilot-instructions-templates#readme",
+  "bugs": {
+    "url": "https://github.com/shira022/copilot-instructions-templates/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shira022/copilot-instructions-templates.git"
+  },
+  "license": "MIT",
+  "author": "Community",
+  "type": "module",
+  "bin": {
+    "copilot-instructions-templates": "./bin/cli.js",
+    "copilot-templates": "./bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src/ --ext .ts",
+    "lint:fix": "eslint src/ --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "validate": "node scripts/check-sections.js && node scripts/validate-yaml.js",
+    "validate:sections": "node scripts/check-sections.js",
+    "validate:yaml": "node scripts/validate-yaml.js",
+    "prepare": "npm run build",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm test && npm run validate"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "glob": "^10.3.10",
+    "inquirer": "^9.2.12",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
